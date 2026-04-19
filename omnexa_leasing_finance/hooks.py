@@ -197,6 +197,21 @@ required_apps = ["omnexa_core"]
 # Request Events
 # ----------------
 before_request = ["omnexa_leasing_finance.license_gate.before_request"]
+
+after_migrate = [
+	"omnexa_leasing_finance.governance_setup.after_migrate",
+	"omnexa_leasing_finance.workspace_enhancer.after_migrate",
+]
+
+permission_query_conditions = {
+	"Leasing Finance Policy Version": "omnexa_leasing_finance.governance_permissions.maker_checker_pqc",
+	"Leasing Finance Audit Snapshot": "omnexa_leasing_finance.governance_permissions.maker_checker_pqc",
+}
+
+has_permission = {
+	"Leasing Finance Policy Version": "omnexa_leasing_finance.governance_permissions.has_maker_checker_permission",
+	"Leasing Finance Audit Snapshot": "omnexa_leasing_finance.governance_permissions.has_maker_checker_permission",
+}
 # after_request = ["omnexa_leasing_finance.utils.after_request"]
 
 # Job Events

@@ -1,0 +1,72 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "contract_id",
+  "modification_date",
+  "modification_type",
+  "old_terms_json",
+  "new_terms_json",
+  "remeasurement_impact"
+ ],
+ "fields": [
+  {
+   "fieldname": "contract_id",
+   "fieldtype": "Link",
+   "label": "Contract",
+   "options": "Leasing Finance Contract",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "modification_date",
+   "fieldtype": "Date",
+   "label": "Modification Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "modification_type",
+   "fieldtype": "Select",
+   "label": "Modification Type",
+   "options": "TERM_CHANGE\nRATE_CHANGE\nPAYMENT_RESTRUCTURE\nASSET_SWAP",
+   "reqd": 1
+  },
+  {
+   "fieldname": "old_terms_json",
+   "fieldtype": "Long Text",
+   "label": "Old Terms JSON"
+  },
+  {
+   "fieldname": "new_terms_json",
+   "fieldtype": "Long Text",
+   "label": "New Terms JSON"
+  },
+  {
+   "fieldname": "remeasurement_impact",
+   "fieldtype": "Currency",
+   "label": "Remeasurement Impact"
+  }
+ ],
+ "module": "Omnexa Leasing Finance",
+ "name": "Leasing Finance Modification Log",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

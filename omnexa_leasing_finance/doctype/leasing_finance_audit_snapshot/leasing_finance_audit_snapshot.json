@@ -1,0 +1,76 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "process_name",
+  "policy_ref",
+  "inputs_json",
+  "outputs_json",
+  "snapshot_hash",
+  "actor",
+  "created_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "process_name",
+   "fieldtype": "Data",
+   "label": "Process Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "policy_ref",
+   "fieldtype": "Data",
+   "label": "Policy Ref"
+  },
+  {
+   "fieldname": "inputs_json",
+   "fieldtype": "Long Text",
+   "label": "Inputs JSON"
+  },
+  {
+   "fieldname": "outputs_json",
+   "fieldtype": "Long Text",
+   "label": "Outputs JSON"
+  },
+  {
+   "fieldname": "snapshot_hash",
+   "fieldtype": "Data",
+   "label": "Snapshot Hash",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "actor",
+   "fieldtype": "Data",
+   "label": "Actor"
+  },
+  {
+   "fieldname": "created_at",
+   "fieldtype": "Datetime",
+   "label": "Created At"
+  }
+ ],
+ "module": "Omnexa Leasing Finance",
+ "name": "Leasing Finance Audit Snapshot",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

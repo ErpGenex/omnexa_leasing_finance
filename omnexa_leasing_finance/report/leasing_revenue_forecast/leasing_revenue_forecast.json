@@ -1,0 +1,9 @@
+{
+ "doctype": "Report",
+ "name": "Leasing Revenue Forecast",
+ "report_name": "Leasing Revenue Forecast",
+ "module": "Omnexa Leasing Finance",
+ "report_type": "Script Report",
+ "ref_doctype": "Leasing Finance Schedule",
+ "is_standard": "Yes"
+}

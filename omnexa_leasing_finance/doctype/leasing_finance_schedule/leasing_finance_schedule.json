@@ -1,0 +1,88 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "hash",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "contract_id",
+  "period_no",
+  "due_date",
+  "principal_component",
+  "interest_component",
+  "payment_amount",
+  "remaining_liability",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "contract_id",
+   "fieldtype": "Link",
+   "label": "Contract",
+   "options": "Leasing Finance Contract",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "period_no",
+   "fieldtype": "Int",
+   "label": "Period No",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Due Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "principal_component",
+   "fieldtype": "Currency",
+   "label": "Principal Component"
+  },
+  {
+   "fieldname": "interest_component",
+   "fieldtype": "Currency",
+   "label": "Interest Component"
+  },
+  {
+   "fieldname": "payment_amount",
+   "fieldtype": "Currency",
+   "label": "Payment Amount",
+   "reqd": 1
+  },
+  {
+   "fieldname": "remaining_liability",
+   "fieldtype": "Currency",
+   "label": "Remaining Liability"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "PLANNED\nBILLED\nPAID\nOVERDUE",
+   "default": "PLANNED",
+   "in_list_view": 1
+  }
+ ],
+ "module": "Omnexa Leasing Finance",
+ "name": "Leasing Finance Schedule",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "print": 1,
+   "email": 1,
+   "export": 1,
+   "report": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}
