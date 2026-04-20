@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "identity_section",
   "customer_name",
   "lease_type",
   "principal",
@@ -22,9 +23,16 @@
   "risk_score",
   "pricing_spread",
   "decision_reason_codes",
-  "required_controls"
+  "required_controls",
+  "control_section",
+  "contract_owner"
  ],
  "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Contract Identity"
+  },
   {
    "fieldname": "customer_name",
    "fieldtype": "Data",
@@ -129,6 +137,17 @@
    "fieldname": "required_controls",
    "fieldtype": "Long Text",
    "label": "Required Controls"
+  },
+  {
+   "fieldname": "control_section",
+   "fieldtype": "Section Break",
+   "label": "Governance"
+  },
+  {
+   "fieldname": "contract_owner",
+   "fieldtype": "Link",
+   "label": "Contract Owner",
+   "options": "User"
   }
  ],
  "module": "Omnexa Leasing Finance",

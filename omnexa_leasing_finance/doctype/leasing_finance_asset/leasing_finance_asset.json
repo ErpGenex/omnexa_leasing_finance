@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "identity_section",
   "contract_id",
   "asset_tag",
   "asset_type",
@@ -13,9 +14,16 @@
   "valuation_amount",
   "insurance_policy_no",
   "maintenance_status",
-  "asset_status"
+  "asset_status",
+  "control_section",
+  "asset_owner"
  ],
  "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Lease Asset Identity"
+  },
   {
    "fieldname": "contract_id",
    "fieldtype": "Link",
@@ -72,6 +80,17 @@
    "options": "ALLOCATED\nACTIVE\nRETURNED\nDISPOSED",
    "default": "ACTIVE",
    "in_list_view": 1
+  },
+  {
+   "fieldname": "control_section",
+   "fieldtype": "Section Break",
+   "label": "Control"
+  },
+  {
+   "fieldname": "asset_owner",
+   "fieldtype": "Link",
+   "label": "Asset Owner",
+   "options": "User"
   }
  ],
  "module": "Omnexa Leasing Finance",

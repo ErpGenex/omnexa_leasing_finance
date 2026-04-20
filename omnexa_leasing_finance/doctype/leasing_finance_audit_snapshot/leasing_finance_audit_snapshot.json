@@ -5,15 +5,23 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "identity_section",
   "process_name",
   "policy_ref",
   "inputs_json",
   "outputs_json",
   "snapshot_hash",
   "actor",
-  "created_at"
+  "created_at",
+  "control_section",
+  "snapshot_reference"
  ],
  "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Audit Snapshot Identity"
+  },
   {
    "fieldname": "process_name",
    "fieldtype": "Data",
@@ -52,6 +60,16 @@
    "fieldname": "created_at",
    "fieldtype": "Datetime",
    "label": "Created At"
+  },
+  {
+   "fieldname": "control_section",
+   "fieldtype": "Section Break",
+   "label": "Governance"
+  },
+  {
+   "fieldname": "snapshot_reference",
+   "fieldtype": "Data",
+   "label": "Snapshot Reference"
   }
  ],
  "module": "Omnexa Leasing Finance",

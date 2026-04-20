@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "identity_section",
   "contract_id",
   "period_no",
   "due_date",
@@ -12,9 +13,16 @@
   "interest_component",
   "payment_amount",
   "remaining_liability",
-  "status"
+  "status",
+  "control_section",
+  "schedule_reference"
  ],
  "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Schedule Identity"
+  },
   {
    "fieldname": "contract_id",
    "fieldtype": "Link",
@@ -64,6 +72,16 @@
    "options": "PLANNED\nBILLED\nPAID\nOVERDUE",
    "default": "PLANNED",
    "in_list_view": 1
+  },
+  {
+   "fieldname": "control_section",
+   "fieldtype": "Section Break",
+   "label": "Control"
+  },
+  {
+   "fieldname": "schedule_reference",
+   "fieldtype": "Data",
+   "label": "Schedule Reference"
   }
  ],
  "module": "Omnexa Leasing Finance",

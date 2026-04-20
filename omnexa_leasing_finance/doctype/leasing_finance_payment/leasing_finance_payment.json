@@ -5,13 +5,21 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "identity_section",
   "contract_id",
   "schedule_id",
   "payment_date",
   "payment_amount",
-  "payment_status"
+  "payment_status",
+  "control_section",
+  "payment_reference"
  ],
  "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Identity"
+  },
   {
    "fieldname": "contract_id",
    "fieldtype": "Link",
@@ -44,6 +52,16 @@
    "label": "Payment Status",
    "options": "POSTED\nREVERSED",
    "default": "POSTED"
+  },
+  {
+   "fieldname": "control_section",
+   "fieldtype": "Section Break",
+   "label": "Control"
+  },
+  {
+   "fieldname": "payment_reference",
+   "fieldtype": "Data",
+   "label": "Payment Reference"
   }
  ],
  "module": "Omnexa Leasing Finance",

@@ -5,6 +5,7 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "identity_section",
   "policy_name",
   "policy_version",
   "payload_json",
@@ -16,9 +17,16 @@
   "created_at",
   "approved_at",
   "rejected_at",
-  "rejection_reason"
+  "rejection_reason",
+  "control_section",
+  "policy_reference"
  ],
  "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Policy Identity"
+  },
   {
    "fieldname": "policy_name",
    "fieldtype": "Data",
@@ -85,6 +93,16 @@
    "fieldname": "rejection_reason",
    "fieldtype": "Small Text",
    "label": "Rejection Reason"
+  },
+  {
+   "fieldname": "control_section",
+   "fieldtype": "Section Break",
+   "label": "Governance"
+  },
+  {
+   "fieldname": "policy_reference",
+   "fieldtype": "Data",
+   "label": "Policy Reference"
   }
  ],
  "module": "Omnexa Leasing Finance",

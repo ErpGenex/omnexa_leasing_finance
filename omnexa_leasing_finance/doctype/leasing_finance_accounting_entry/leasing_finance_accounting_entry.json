@@ -5,15 +5,23 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "identity_section",
   "contract_id",
   "entry_date",
   "entry_type",
   "debit_account",
   "credit_account",
   "amount",
-  "currency"
+  "currency",
+  "control_section",
+  "entry_reference"
  ],
  "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Accounting Entry Identity"
+  },
   {
    "fieldname": "contract_id",
    "fieldtype": "Link",
@@ -57,6 +65,16 @@
    "fieldtype": "Data",
    "label": "Currency",
    "default": "USD"
+  },
+  {
+   "fieldname": "control_section",
+   "fieldtype": "Section Break",
+   "label": "Control"
+  },
+  {
+   "fieldname": "entry_reference",
+   "fieldtype": "Data",
+   "label": "Entry Reference"
   }
  ],
  "module": "Omnexa Leasing Finance",

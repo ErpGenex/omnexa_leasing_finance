@@ -5,14 +5,22 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
+  "identity_section",
   "contract_id",
   "snapshot_date",
   "residual_exposure",
   "asset_risk_score",
   "delinquency_days",
-  "early_warning_flag"
+  "early_warning_flag",
+  "control_section",
+  "risk_owner"
  ],
  "fields": [
+  {
+   "fieldname": "identity_section",
+   "fieldtype": "Section Break",
+   "label": "Risk Snapshot Identity"
+  },
   {
    "fieldname": "contract_id",
    "fieldtype": "Link",
@@ -46,6 +54,17 @@
    "fieldname": "early_warning_flag",
    "fieldtype": "Check",
    "label": "Early Warning Flag"
+  },
+  {
+   "fieldname": "control_section",
+   "fieldtype": "Section Break",
+   "label": "Control"
+  },
+  {
+   "fieldname": "risk_owner",
+   "fieldtype": "Link",
+   "label": "Risk Owner",
+   "options": "User"
   }
  ],
  "module": "Omnexa Leasing Finance",
