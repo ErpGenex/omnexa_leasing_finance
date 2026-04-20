@@ -1,0 +1,21 @@
+{
+ "action": "Create Entry",
+ "action_label": "Create",
+ "creation": "2026-04-20 00:31:41.794013",
+ "description": "Create or review your first **Leasing Finance Asset** record from this workspace.",
+ "docstatus": 0,
+ "doctype": "Onboarding Step",
+ "idx": 0,
+ "is_complete": 0,
+ "is_single": 0,
+ "is_skipped": 0,
+ "modified": "2026-04-20 02:24:47.046141",
+ "modified_by": "Administrator",
+ "name": "ERPGENEX-WS-leasing_finance-02-leasing_finance_asset",
+ "owner": "Administrator",
+ "reference_document": "Leasing Finance Asset",
+ "show_form_tour": 0,
+ "show_full_form": 0,
+ "title": "Get started with Leasing Finance Asset",
+ "validate_action": 1
+}

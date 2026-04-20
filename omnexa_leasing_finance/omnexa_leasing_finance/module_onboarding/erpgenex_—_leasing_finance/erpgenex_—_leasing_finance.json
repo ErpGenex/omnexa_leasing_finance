@@ -1,0 +1,41 @@
+{
+ "allow_roles": [
+  {
+   "role": "Desk User"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "creation": "2026-04-20 00:31:41.812501",
+ "docstatus": 0,
+ "doctype": "Module Onboarding",
+ "documentation_url": "https://frappe.io/framework",
+ "idx": 0,
+ "is_complete": 0,
+ "modified": "2026-04-20 02:24:47.078085",
+ "modified_by": "Administrator",
+ "module": "Omnexa Leasing Finance",
+ "name": "ERPGENEX \u2014 Leasing Finance",
+ "owner": "Administrator",
+ "steps": [
+  {
+   "step": "ERPGENEX-WS-leasing_finance-01-leasing_finance_contract"
+  },
+  {
+   "step": "ERPGENEX-WS-leasing_finance-02-leasing_finance_asset"
+  },
+  {
+   "step": "ERPGENEX-WS-leasing_finance-03-leasing_finance_schedule"
+  },
+  {
+   "step": "ERPGENEX-WS-leasing_finance-04-leasing_finance_payment"
+  },
+  {
+   "step": "ERPGENEX-WS-leasing_finance-home"
+  }
+ ],
+ "subtitle": "Guided setup for this workspace.",
+ "success_message": "You are ready to work in Leasing Finance.",
+ "title": "ERPGENEX \u00b7 Leasing Finance"
+}
