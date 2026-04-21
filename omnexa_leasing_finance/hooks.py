@@ -82,8 +82,8 @@ required_apps = ["omnexa_core"]
 # Installation
 # ------------
 
-# before_install = "omnexa_leasing_finance.install.before_install"
-# after_install = "omnexa_leasing_finance.install.after_install"
+before_install = "omnexa_leasing_finance.install.enforce_supported_frappe_version"
+before_migrate = "omnexa_leasing_finance.install.enforce_supported_frappe_version"
 
 # Uninstallation
 # ------------
