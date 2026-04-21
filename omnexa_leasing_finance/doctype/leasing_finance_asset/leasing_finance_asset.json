@@ -1,115 +1,113 @@
 {
- "actions": [],
- "allow_rename": 1,
- "autoname": "hash",
- "doctype": "DocType",
- "engine": "InnoDB",
- "field_order": [
-  "identity_section",
-  "contract_id",
-  "asset_tag",
-  "asset_type",
-  "acquisition_value",
-  "residual_value",
-  "valuation_amount",
-  "insurance_policy_no",
-  "maintenance_status",
-  "asset_status",
-  "control_section",
-  "asset_owner"
- ],
- "fields": [
-  {
-   "fieldname": "identity_section",
-   "fieldtype": "Section Break",
-   "label": "Lease Asset Identity"
-  },
-  {
-   "fieldname": "contract_id",
-   "fieldtype": "Link",
-   "label": "Contract",
-   "options": "Leasing Finance Contract",
-   "reqd": 1,
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "asset_tag",
-   "fieldtype": "Data",
-   "label": "Asset Tag",
-   "reqd": 1,
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "asset_type",
-   "fieldtype": "Data",
-   "label": "Asset Type",
-   "reqd": 1
-  },
-  {
-   "fieldname": "acquisition_value",
-   "fieldtype": "Currency",
-   "label": "Acquisition Value",
-   "reqd": 1
-  },
-  {
-   "fieldname": "residual_value",
-   "fieldtype": "Currency",
-   "label": "Residual Value"
-  },
-  {
-   "fieldname": "valuation_amount",
-   "fieldtype": "Currency",
-   "label": "Valuation Amount"
-  },
-  {
-   "fieldname": "insurance_policy_no",
-   "fieldtype": "Data",
-   "label": "Insurance Policy"
-  },
-  {
-   "fieldname": "maintenance_status",
-   "fieldtype": "Select",
-   "label": "Maintenance Status",
-   "options": "OK\nDUE\nOVERDUE",
-   "default": "OK"
-  },
-  {
-   "fieldname": "asset_status",
-   "fieldtype": "Select",
-   "label": "Asset Status",
-   "options": "ALLOCATED\nACTIVE\nRETURNED\nDISPOSED",
-   "default": "ACTIVE",
-   "in_list_view": 1
-  },
-  {
-   "fieldname": "control_section",
-   "fieldtype": "Section Break",
-   "label": "Control"
-  },
-  {
-   "fieldname": "asset_owner",
-   "fieldtype": "Link",
-   "label": "Asset Owner",
-   "options": "User"
-  }
- ],
- "module": "Omnexa Leasing Finance",
- "name": "Leasing Finance Asset",
- "permissions": [
-  {
-   "role": "System Manager",
-   "read": 1,
-   "write": 1,
-   "create": 1,
-   "delete": 1,
-   "print": 1,
-   "email": 1,
-   "export": 1,
-   "report": 1,
-   "share": 1
-  }
- ],
- "sort_field": "modified",
- "sort_order": "DESC",
- "track_changes": 1
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "hash",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"contract_id",
+		"asset_tag",
+		"asset_type",
+		"column_break_omnexa_1",
+		"acquisition_value",
+		"residual_value",
+		"valuation_amount",
+		"column_break_omnexa_2",
+		"insurance_policy_no",
+		"maintenance_status",
+		"asset_status",
+		"asset_owner"
+	],
+	"fields": [
+		{
+			"fieldname": "contract_id",
+			"fieldtype": "Link",
+			"label": "Contract",
+			"options": "Leasing Finance Contract",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "asset_tag",
+			"fieldtype": "Data",
+			"label": "Asset Tag",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "asset_type",
+			"fieldtype": "Data",
+			"label": "Asset Type",
+			"reqd": 1
+		},
+		{
+			"fieldname": "acquisition_value",
+			"fieldtype": "Currency",
+			"label": "Acquisition Value",
+			"reqd": 1
+		},
+		{
+			"fieldname": "residual_value",
+			"fieldtype": "Currency",
+			"label": "Residual Value"
+		},
+		{
+			"fieldname": "valuation_amount",
+			"fieldtype": "Currency",
+			"label": "Valuation Amount"
+		},
+		{
+			"fieldname": "insurance_policy_no",
+			"fieldtype": "Data",
+			"label": "Insurance Policy"
+		},
+		{
+			"fieldname": "maintenance_status",
+			"fieldtype": "Select",
+			"label": "Maintenance Status",
+			"options": "OK\nDUE\nOVERDUE",
+			"default": "OK"
+		},
+		{
+			"fieldname": "asset_status",
+			"fieldtype": "Select",
+			"label": "Asset Status",
+			"options": "ALLOCATED\nACTIVE\nRETURNED\nDISPOSED",
+			"default": "ACTIVE",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "asset_owner",
+			"fieldtype": "Link",
+			"label": "Asset Owner",
+			"options": "User"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
+		}
+	],
+	"module": "Omnexa Leasing Finance",
+	"name": "Leasing Finance Asset",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1
 }
