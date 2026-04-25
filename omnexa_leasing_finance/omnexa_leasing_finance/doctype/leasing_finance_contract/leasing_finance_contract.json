@@ -1,0 +1,170 @@
+{
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "hash",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"customer_name",
+		"lease_type",
+		"principal",
+		"term_months",
+		"discount_rate",
+		"rate_type",
+		"column_break_omnexa_1",
+		"currency",
+		"country_code",
+		"residual_value",
+		"rou_asset",
+		"lease_liability",
+		"periodic_payment",
+		"column_break_omnexa_2",
+		"lifecycle_stage",
+		"ifrs9_stage",
+		"risk_score",
+		"pricing_spread",
+		"decision_reason_codes",
+		"required_controls",
+		"contract_owner"
+	],
+	"fields": [
+		{
+			"fieldname": "customer_name",
+			"fieldtype": "Data",
+			"label": "Customer Name",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "lease_type",
+			"fieldtype": "Select",
+			"label": "Lease Type",
+			"options": "FINANCE\nOPERATING\nSALE_LEASEBACK",
+			"default": "FINANCE",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "principal",
+			"fieldtype": "Currency",
+			"label": "Principal",
+			"reqd": 1
+		},
+		{
+			"fieldname": "term_months",
+			"fieldtype": "Int",
+			"label": "Term Months",
+			"reqd": 1
+		},
+		{
+			"fieldname": "discount_rate",
+			"fieldtype": "Percent",
+			"label": "Discount Rate"
+		},
+		{
+			"fieldname": "rate_type",
+			"fieldtype": "Select",
+			"label": "Rate Type",
+			"options": "FIXED\nFLOATING",
+			"default": "FIXED"
+		},
+		{
+			"fieldname": "currency",
+			"fieldtype": "Data",
+			"label": "Currency",
+			"default": "USD"
+		},
+		{
+			"fieldname": "country_code",
+			"fieldtype": "Data",
+			"label": "Country Code",
+			"default": "INTL"
+		},
+		{
+			"fieldname": "residual_value",
+			"fieldtype": "Currency",
+			"label": "Residual Value"
+		},
+		{
+			"fieldname": "rou_asset",
+			"fieldtype": "Currency",
+			"label": "ROU Asset"
+		},
+		{
+			"fieldname": "lease_liability",
+			"fieldtype": "Currency",
+			"label": "Lease Liability"
+		},
+		{
+			"fieldname": "periodic_payment",
+			"fieldtype": "Currency",
+			"label": "Periodic Payment"
+		},
+		{
+			"fieldname": "lifecycle_stage",
+			"fieldtype": "Select",
+			"label": "Lifecycle Stage",
+			"options": "APPLICATION\nCREDIT_EVAL\nAPPROVAL\nCONTRACT\nACTIVE\nMODIFICATION\nTERMINATION",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "ifrs9_stage",
+			"fieldtype": "Select",
+			"label": "IFRS9 Stage",
+			"options": "STAGE_1\nSTAGE_2\nSTAGE_3",
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "risk_score",
+			"fieldtype": "Float",
+			"label": "Risk Score"
+		},
+		{
+			"fieldname": "pricing_spread",
+			"fieldtype": "Percent",
+			"label": "Pricing Spread"
+		},
+		{
+			"fieldname": "decision_reason_codes",
+			"fieldtype": "Small Text",
+			"label": "Reason Codes"
+		},
+		{
+			"fieldname": "required_controls",
+			"fieldtype": "Long Text",
+			"label": "Required Controls"
+		},
+		{
+			"fieldname": "contract_owner",
+			"fieldtype": "Link",
+			"label": "Contract Owner",
+			"options": "User"
+		},
+		{
+			"fieldname": "column_break_omnexa_1",
+			"fieldtype": "Column Break"
+		},
+		{
+			"fieldname": "column_break_omnexa_2",
+			"fieldtype": "Column Break"
+		}
+	],
+	"module": "Omnexa Leasing Finance",
+	"name": "Leasing Finance Contract",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1
+}

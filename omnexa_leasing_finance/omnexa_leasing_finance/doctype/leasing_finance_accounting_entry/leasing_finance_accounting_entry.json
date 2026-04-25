@@ -1,0 +1,87 @@
+{
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "hash",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"contract_id",
+		"entry_date",
+		"entry_type",
+		"debit_account",
+		"credit_account",
+		"amount",
+		"currency",
+		"entry_reference"
+	],
+	"fields": [
+		{
+			"fieldname": "contract_id",
+			"fieldtype": "Link",
+			"label": "Contract",
+			"options": "Leasing Finance Contract",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "entry_date",
+			"fieldtype": "Date",
+			"label": "Entry Date",
+			"reqd": 1
+		},
+		{
+			"fieldname": "entry_type",
+			"fieldtype": "Select",
+			"label": "Entry Type",
+			"options": "INITIAL_RECOGNITION\nINTEREST_EXPENSE\nLEASE_PAYMENT\nDEPRECIATION\nREMEASUREMENT\nIMPAIRMENT",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "debit_account",
+			"fieldtype": "Data",
+			"label": "Debit Account"
+		},
+		{
+			"fieldname": "credit_account",
+			"fieldtype": "Data",
+			"label": "Credit Account"
+		},
+		{
+			"fieldname": "amount",
+			"fieldtype": "Currency",
+			"label": "Amount",
+			"reqd": 1
+		},
+		{
+			"fieldname": "currency",
+			"fieldtype": "Data",
+			"label": "Currency",
+			"default": "USD"
+		},
+		{
+			"fieldname": "entry_reference",
+			"fieldtype": "Data",
+			"label": "Entry Reference"
+		}
+	],
+	"module": "Omnexa Leasing Finance",
+	"name": "Leasing Finance Accounting Entry",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1
+}

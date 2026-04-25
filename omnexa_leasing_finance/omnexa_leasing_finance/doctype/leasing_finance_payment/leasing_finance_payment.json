@@ -1,0 +1,74 @@
+{
+	"actions": [],
+	"allow_rename": 1,
+	"autoname": "hash",
+	"doctype": "DocType",
+	"engine": "InnoDB",
+	"field_order": [
+		"contract_id",
+		"schedule_id",
+		"payment_date",
+		"payment_amount",
+		"payment_status",
+		"payment_reference"
+	],
+	"fields": [
+		{
+			"fieldname": "contract_id",
+			"fieldtype": "Link",
+			"label": "Contract",
+			"options": "Leasing Finance Contract",
+			"reqd": 1,
+			"in_list_view": 1
+		},
+		{
+			"fieldname": "schedule_id",
+			"fieldtype": "Link",
+			"label": "Schedule",
+			"options": "Leasing Finance Schedule"
+		},
+		{
+			"fieldname": "payment_date",
+			"fieldtype": "Date",
+			"label": "Payment Date",
+			"reqd": 1
+		},
+		{
+			"fieldname": "payment_amount",
+			"fieldtype": "Currency",
+			"label": "Payment Amount",
+			"reqd": 1
+		},
+		{
+			"fieldname": "payment_status",
+			"fieldtype": "Select",
+			"label": "Payment Status",
+			"options": "POSTED\nREVERSED",
+			"default": "POSTED"
+		},
+		{
+			"fieldname": "payment_reference",
+			"fieldtype": "Data",
+			"label": "Payment Reference"
+		}
+	],
+	"module": "Omnexa Leasing Finance",
+	"name": "Leasing Finance Payment",
+	"permissions": [
+		{
+			"role": "System Manager",
+			"read": 1,
+			"write": 1,
+			"create": 1,
+			"delete": 1,
+			"print": 1,
+			"email": 1,
+			"export": 1,
+			"report": 1,
+			"share": 1
+		}
+	],
+	"sort_field": "modified",
+	"sort_order": "DESC",
+	"track_changes": 1
+}

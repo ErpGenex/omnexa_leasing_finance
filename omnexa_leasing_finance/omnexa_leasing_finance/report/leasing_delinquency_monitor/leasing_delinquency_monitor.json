@@ -1,0 +1,9 @@
+{
+ "doctype": "Report",
+ "name": "Leasing Delinquency",
+ "report_name": "Leasing Delinquency",
+ "module": "Omnexa Leasing Finance",
+ "report_type": "Script Report",
+ "ref_doctype": "Leasing Finance Risk Snapshot",
+ "is_standard": "Yes"
+}
