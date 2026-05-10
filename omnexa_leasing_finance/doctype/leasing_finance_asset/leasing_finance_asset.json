@@ -5,12 +5,14 @@
 	"doctype": "DocType",
 	"engine": "InnoDB",
 	"field_order": [
+		"tab_break_overview",
 		"contract_id",
 		"asset_tag",
 		"asset_type",
 		"column_break_omnexa_1",
 		"acquisition_value",
 		"residual_value",
+		"tab_break_details",
 		"valuation_amount",
 		"column_break_omnexa_2",
 		"insurance_policy_no",
@@ -19,6 +21,16 @@
 		"asset_owner"
 	],
 	"fields": [
+		{
+			"fieldname": "tab_break_overview",
+			"fieldtype": "Tab Break",
+			"label": "Overview"
+		},
+		{
+			"fieldname": "tab_break_details",
+			"fieldtype": "Tab Break",
+			"label": "Details"
+		},
 		{
 			"fieldname": "contract_id",
 			"fieldtype": "Link",
