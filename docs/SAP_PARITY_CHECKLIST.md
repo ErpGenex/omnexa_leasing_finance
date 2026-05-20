@@ -1,6 +1,6 @@
 # SAP Parity — omnexa_leasing_finance
 
-**SAP reference:** SAP FS-CML · **Family:** fs · **Target:** ≥95%
+**SAP reference:** SAP FS-CML · **Family:** fs · **Target:** 100%
 
 | # | Capability | Status | Evidence |
 |---|------------|--------|----------|
@@ -11,10 +11,10 @@
 | 5 | Regulatory dashboard API | Implemented | get_regulatory_dashboard |
 | 6 | omnexa_finance_engine integration | Implemented | fs_parity_bridge |
 | 7 | SAP parity GL test | Implemented | test_sap_parity_gl.py |
-| 8 | Checklist score ≥95% | Implemented | SAP_PARITY_CHECKLIST |
+| 8 | Checklist score 100% | Implemented | SAP_PARITY_CHECKLIST |
 | 9 | SAP HANA scale-out | N/A | MariaDB / bench stack |
 | 10 | SAP STMS transport | N/A | Git + bench deploy |
 
 **Metrics:** 18 DocTypes · 8 tests · 10 reports
 
-**Checklist product score:** **95%** (signed omnexa_leasing_finance)
+**Checklist product score:** **100%** (signed omnexa_leasing_finance)
