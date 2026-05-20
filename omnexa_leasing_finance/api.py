@@ -7,6 +7,7 @@ from decimal import Decimal
 import frappe
 
 from .engine import LeaseCase, evaluate_lease_case
+from .engine.early_termination import EarlyTerminationInput, compute_early_termination
 from .standards_profile import get_standards_profile as _get_standards_profile
 
 
@@ -19,6 +20,25 @@ def get_standards_profile() -> dict:
 def evaluate_lease(principal: str, term_months: int, lease_type: str = "FINANCE", discount_rate: str = "0.08", residual_value: str = "0") -> dict:
 	case = LeaseCase(principal=Decimal(str(principal)), term_months=int(term_months), lease_type=lease_type, discount_rate=Decimal(str(discount_rate)), residual_value=Decimal(str(residual_value)))
 	return evaluate_lease_case(case).to_dict()
+
+
+@frappe.whitelist()
+def evaluate_early_termination(
+	remaining_liability: str,
+	rou_net_book: str,
+	months_remaining: int,
+	penalty_rate: str = "0.02",
+	unamortized_initial_direct_costs: str = "0",
+) -> dict:
+	"""IFRS 16 early termination estimate (no GL posting — safe preview)."""
+	inp = EarlyTerminationInput(
+		remaining_liability=Decimal(str(remaining_liability)),
+		rou_net_book=Decimal(str(rou_net_book)),
+		months_remaining=int(months_remaining),
+		penalty_rate=Decimal(str(penalty_rate)),
+		unamortized_initial_direct_costs=Decimal(str(unamortized_initial_direct_costs)),
+	)
+	return compute_early_termination(inp).to_dict()
 
 
 @frappe.whitelist()
@@ -183,3 +203,50 @@ def get_regulatory_dashboard() -> dict:
 	std = _get_standards_profile()
 	gov = governance_overview("omnexa_leasing_finance")
 	return {"app": "omnexa_leasing_finance", "standards": std.get("standards", []), "activity_controls": std.get("activity_controls", []), "governance": gov}
+
+@frappe.whitelist()
+def preview_gl_posting(
+	scenario: str | None = None,
+	rou_asset: str = "0",
+	lease_liability: str = "0",
+	principal: str = "0",
+	settlement_cash: str = "0",
+) -> dict:
+	"""SAP parity — GL preview (finance_engine bridge, no JE)."""
+	from omnexa_finance_engine.fs_parity_bridge import preview_gl_for_vertical
+	return preview_gl_for_vertical(
+		"leasing",
+		scenario=scenario,
+		rou_asset=rou_asset,
+		lease_liability=lease_liability,
+		principal=principal,
+		settlement_cash=settlement_cash,
+	)
+
+
+@frappe.whitelist()
+def post_gl_posting(
+	company: str,
+	scenario: str | None = None,
+	branch: str | None = None,
+	posting_date: str | None = None,
+	rou_asset: str = "0",
+	lease_liability: str = "0",
+	principal: str = "0",
+	settlement_cash: str = "0",
+) -> dict:
+	"""Live JE when ``fs_live_gl_posting`` is ON (default OFF)."""
+	from omnexa_finance_engine.fs_gl_posting import post_fs_scenario_gl
+
+	return post_fs_scenario_gl(
+		company=company,
+		scenario=scenario or "lease_recognition",
+		vertical="leasing",
+		branch=branch,
+		posting_date=posting_date,
+		rou_asset=rou_asset,
+		lease_liability=lease_liability,
+		principal=principal,
+		settlement_cash=settlement_cash,
+	)
+
