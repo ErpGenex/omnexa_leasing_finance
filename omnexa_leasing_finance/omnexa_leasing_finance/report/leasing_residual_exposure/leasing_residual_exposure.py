@@ -23,4 +23,4 @@ def execute(filters=None):
 		limit_page_length=5000,
 	)
 
-	return [{"label":"Contract","fieldname":"contract_id","fieldtype":"Link","options":"Leasing Finance Contract","width":180},{"label":"Residual Exposure","fieldname":"residual_exposure","fieldtype":"Currency","width":180},{"label":"Risk","fieldname":"asset_risk_score","fieldtype":"Float","width":120}], data
+	return [{"label":_("Contract"),"fieldname":"contract_id","fieldtype":"Link","options":"Leasing Finance Contract","width":180},{"label":_("Residual Exposure"),"fieldname":"residual_exposure","fieldtype":"Currency","width":180},{"label":_("Risk"),"fieldname":"asset_risk_score","fieldtype":"Float","width":120}], data

@@ -23,4 +23,4 @@ def execute(filters=None):
 		limit_page_length=5000,
 	)
 
-	return [{"label":"Contract","fieldname":"contract_id","fieldtype":"Link","options":"Leasing Finance Contract","width":180},{"label":"Delinquency Days","fieldname":"delinquency_days","fieldtype":"Int","width":140},{"label":"EWS","fieldname":"early_warning_flag","fieldtype":"Check","width":100}], data
+	return [{"label":_("Contract"),"fieldname":"contract_id","fieldtype":"Link","options":"Leasing Finance Contract","width":180},{"label":_("Delinquency Days"),"fieldname":"delinquency_days","fieldtype":"Int","width":140},{"label":_("EWS"),"fieldname":"early_warning_flag","fieldtype":"Check","width":100}], data
