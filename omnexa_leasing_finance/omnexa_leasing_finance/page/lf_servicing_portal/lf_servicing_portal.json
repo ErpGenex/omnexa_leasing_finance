@@ -1,0 +1,16 @@
+{
+	"doctype": "Page",
+	"module": "Omnexa Leasing Finance",
+	"name": "lf-servicing-portal",
+	"page_name": "lf-servicing-portal",
+	"standard": "Yes",
+	"title": "Digital Channel",
+	"roles": [
+		{
+			"role": "System Manager"
+		},
+		{
+			"role": "All"
+		}
+	]
+}
