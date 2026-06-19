@@ -10,16 +10,16 @@ app_license = "mit"
 
 required_apps = ["omnexa_core"]
 
-# Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "omnexa_leasing_finance",
-# 		"logo": "/assets/omnexa_leasing_finance/logo.png",
-# 		"title": "Omnexa Leasing Finance",
-# 		"route": "/omnexa_leasing_finance",
-# 		"has_permission": "omnexa_leasing_finance.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "omnexa_leasing_finance",
+		"logo": "/assets/omnexa_leasing_finance/logo.png",
+		"title": "LeaseMaster",
+		"route": "/app/leasing_finance",
+		"has_permission": "omnexa_core.omnexa_core.finance_demo.finance_app_permission.has_app_permission",
+	}
+]
+
 
 # Includes in <head>
 # ------------------
