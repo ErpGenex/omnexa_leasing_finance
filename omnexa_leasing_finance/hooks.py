@@ -15,7 +15,7 @@ add_to_apps_screen = [
 		"name": "omnexa_leasing_finance",
 		"logo": "/assets/omnexa_leasing_finance/logo.png",
 		"title": "LeaseMaster",
-		"route": "/app/leasing_finance",
+		"route": "/app/lf-servicing-portal",
 		"has_permission": "omnexa_core.omnexa_core.finance_demo.finance_app_permission.has_app_permission",
 	}
 ]
