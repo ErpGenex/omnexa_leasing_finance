@@ -10,6 +10,7 @@ from omnexa_core.omnexa_core.report_print.report_query_filters import (
 	prepare_filters,
 	sql_conditions,
 )
+from omnexa_core.omnexa_core.utils.report_charts import grouped_sum_chart
 
 
 
@@ -23,4 +24,12 @@ def execute(filters=None):
 		limit_page_length=5000,
 	)
 
-	return [{"label":_("Contract"),"fieldname":"name","fieldtype":"Link","options":"Leasing Finance Contract","width":180},{"label":_("Customer"),"fieldname":"customer_name","fieldtype":"Data","width":180},{"label":_("Lease Type"),"fieldname":"lease_type","fieldtype":"Data","width":120},{"label":_("Principal"),"fieldname":"principal","fieldtype":"Currency","width":130},{"label":_("Liability"),"fieldname":"lease_liability","fieldtype":"Currency","width":130}], data
+	columns = [
+		{"label": _("Contract"), "fieldname": "name", "fieldtype": "Link", "options": "Leasing Finance Contract", "width": 180},
+		{"label": _("Customer"), "fieldname": "customer_name", "fieldtype": "Data", "width": 180},
+		{"label": _("Lease Type"), "fieldname": "lease_type", "fieldtype": "Data", "width": 120},
+		{"label": _("Principal"), "fieldname": "principal", "fieldtype": "Currency", "width": 130},
+		{"label": _("Liability"), "fieldname": "lease_liability", "fieldtype": "Currency", "width": 130},
+	]
+	chart = grouped_sum_chart(data, group_field="lease_type", value_field="principal", title="Principal by Lease Type")
+	return columns, data, None, chart
