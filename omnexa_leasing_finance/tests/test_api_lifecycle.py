@@ -1,5 +1,9 @@
 from frappe.tests.utils import FrappeTestCase
 
+from omnexa_core.tests.test_helpers import suppress_workflow_attach_print
+
+suppress_workflow_attach_print()
+
 from omnexa_leasing_finance.api import apply_contract_modification, generate_lease_schedule, post_ifrs16_entries, record_lease_payment, register_lease_asset, run_residual_risk_snapshot, upsert_lease_contract
 
 
